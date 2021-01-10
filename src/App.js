@@ -17,6 +17,8 @@ class App extends Component {
       ],
       searchField: '',
     }
+
+    // this.onSearchBoxChange = this.onSearchBoxChange.bind(this);
   }
 
   componentDidMount () {
@@ -32,12 +34,20 @@ class App extends Component {
     return monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLowerCase()))
   }
 
+  // arrow functions automatically get lexical scope
+  onSearchBoxChange = (event) => {
+    const searchField = event.target.value;
+    const callback = () => console.log('setStateCallback', this.state);
+    // setState is async
+    this.setState({ searchField }, callback);
+  }
+
   render () {
     return (
       <div className="App">
         <SearchBox
           placeholder="don't be shy..."
-          onChange={ event => this.setState({ searchField: event.target.value }, () => console.log('setStateCallback', this.state)) }
+          onChange={ this.onSearchBoxChange }
         />
         <CardList items={ this.filteredMonsters() } />
       </div>
