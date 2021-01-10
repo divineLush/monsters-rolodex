@@ -3,6 +3,5 @@
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   padding: 35px;
-  background-color: #4baa4b;
   gap: 20px;
 }

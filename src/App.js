@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardList from './components/card-list/card-list.jsx';
 import SearchBox from './components/search-box/search-box.jsx';
+import Header from './components/header/header.jsx';
 
 import './App.css';
 
@@ -45,8 +46,9 @@ class App extends Component {
   render () {
     return (
       <div className="App">
+        <Header />
         <SearchBox
-          placeholder="don't be shy..."
+          placeholder="search monsters"
           onChange={ this.onSearchBoxChange }
         />
         <CardList items={ this.filteredMonsters() } />

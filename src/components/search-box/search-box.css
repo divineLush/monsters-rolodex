@@ -1,0 +1,15 @@
+.search-box {
+  border: 2px solid #4b4baa;
+  color: #4b4baa;
+  border-radius: 15px;
+  padding: 5px 10px;
+  font-family: monospace;
+  outline: none;
+  transition: all .5s;
+}
+
+.search-box:focus,
+.search-box:active {
+  transform: scale(1.1);
+  box-shadow: 3px 6px;
+}
